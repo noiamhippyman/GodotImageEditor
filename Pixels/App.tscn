@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://App.gd" type="Script" id=1]
+[ext_resource path="res://MenuBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ImageViewport.tscn" type="PackedScene" id=3]
+
+[node name="App" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+editor/display_folded = true
+margin_right = 1024.0
+margin_bottom = 34.0
+
+[node name="MenuBar" parent="VBoxContainer/PanelContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 27.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 38.0
+margin_right = 1024.0
+margin_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_right = 147.0
+margin_bottom = 538.0
+text = "TEMPORARY BUTTON"
+
+[node name="ImageViewport" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 151.0
+margin_right = 873.0
+margin_bottom = 538.0
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 877.0
+margin_right = 1024.0
+margin_bottom = 538.0
+text = "TEMPORARY BUTTON"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 580.0
+margin_right = 1024.0
+margin_bottom = 600.0
+text = "TEMPORARY BUTTON"
+[connection signal="file_quit" from="VBoxContainer/PanelContainer/MenuBar" to="." method="_on_MenuBar_file_quit"]
