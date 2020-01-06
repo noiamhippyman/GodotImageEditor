@@ -123,15 +123,14 @@ func zoom_on_position(p_zoom:float,p_pos:Vector2):
 	
 	var prevZoom:float = zoom
 	zoom = p_zoom
-	var ofs:Vector2 = p_pos
-	ofs = ofs / prevZoom - ofs / zoom
+	var ofs:Vector2 = textureRect.rect_position - p_pos
+	ofs = (ofs / prevZoom) - (ofs / zoom)
 	textureRect.rect_position.x = round(textureRect.rect_position.x + ofs.x)
 	textureRect.rect_position.y = round(textureRect.rect_position.y + ofs.y)
 	zoom_update()
 
 func zoom_update():
 	zoom = clamp(zoom,MIN_ZOOM,MAX_ZOOM)
-	print(zoom)
 	textureRect.rect_scale = Vector2(zoom,zoom)
 	update()
 
@@ -148,9 +147,5 @@ func _on_ImageViewport_gui_input(event):
 		# Zooming with mouse wheel
 		if (event.button_index == BUTTON_WHEEL_DOWN):
 			zoom_on_position(zoom * (1 - (0.05 * event.factor)),event.position)
-			#zoom += event.factor * zoomMultiplier
-			#zoom_update()
 		if (event.button_index == BUTTON_WHEEL_UP):
 			zoom_on_position(zoom * ((0.95 + (0.05 * event.factor)) / 0.95),event.position)
-			#zoom -= event.factor * zoomMultiplier
-			#zoom_update()
