@@ -58,7 +58,7 @@ func draw_ruler_guides():
 	var minor_subdivision:int = 5
 	var my_transform = textureRect.get_transform()
 	var ruler_transform:Transform2D = Transform2D()
-	var RULE = 50
+	var RULE = 100
 	var basic_rule:float = RULE
 	var i:int = 0
 	while (basic_rule * zoom > RULE):
@@ -116,6 +116,7 @@ func draw_ruler_guides():
 func _draw():
 	draw_ruler_guides()
 
+# TODO: Figure out why zoom on position isn't working properly
 func zoom_on_position(p_zoom:float,p_pos:Vector2):
 	if (p_zoom < MIN_ZOOM || p_zoom > MAX_ZOOM):
 		return
