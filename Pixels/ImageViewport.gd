@@ -103,6 +103,5 @@ func _on_ImageViewport_zoom_changed(zoom):
 	$TextureRect.rect_scale = Vector2(zoom,zoom)
 	update()
 
-
 func _on_ImageViewport_resized():
 	$Rulers.update()
