@@ -20,7 +20,6 @@ const RULER_SIZE:int = 24
 const RULE:float = 100.0
 
 func draw_ruler_guides():
-	var zero = Vector2.ZERO
 	var size = get_parent().get_rect().size
 	var font = get_font("rulers","EditorFonts")
 	var ruler_transform:Transform2D = Transform2D()

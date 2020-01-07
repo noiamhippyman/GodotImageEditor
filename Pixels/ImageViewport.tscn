@@ -26,4 +26,5 @@ margin_bottom = 40.0
 script = ExtResource( 2 )
 [connection signal="drag_offset_changed" from="." to="." method="_on_ImageViewport_drag_offset_changed"]
 [connection signal="gui_input" from="." to="." method="_on_ImageViewport_gui_input"]
+[connection signal="resized" from="." to="." method="_on_ImageViewport_resized"]
 [connection signal="zoom_changed" from="." to="." method="_on_ImageViewport_zoom_changed"]
