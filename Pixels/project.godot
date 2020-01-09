@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "BrushCircle",
+"language": "GDScript",
+"path": "res://Brushes/BrushCircle.gd"
+}, {
+"base": "Viewport",
+"class": "Layer",
+"language": "GDScript",
+"path": "res://Classes/Layer.gd"
+}, {
+"base": "Reference",
+"class": "Project",
+"language": "GDScript",
+"path": "res://Classes/Project.gd"
+} ]
 _global_script_class_icons={
-
+"BrushCircle": "",
+"Layer": "",
+"Project": ""
 }
 
 [application]

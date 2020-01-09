@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ImageViewport.gd" type="Script" id=1]
-[ext_resource path="res://ViewportRulers.gd" type="Script" id=2]
+[ext_resource path="res://ImageBorder.gd" type="Script" id=2]
+[ext_resource path="res://ViewportRulers.gd" type="Script" id=3]
 
 [node name="ImageViewport" type="Container"]
 anchor_right = 1.0
@@ -17,11 +18,17 @@ margin_right = 200.0
 margin_bottom = 200.0
 stretch_mode = 3
 
-[node name="Rulers" type="Control" parent="."]
+[node name="ImageBorder" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 2 )
+
+[node name="Rulers" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
 [connection signal="drag_offset_changed" from="." to="." method="_on_ImageViewport_drag_offset_changed"]
 [connection signal="gui_input" from="." to="." method="_on_ImageViewport_gui_input"]
 [connection signal="resized" from="." to="." method="_on_ImageViewport_resized"]
 [connection signal="zoom_changed" from="." to="." method="_on_ImageViewport_zoom_changed"]
+[connection signal="resized" from="TextureRect" to="." method="_on_TextureRect_resized"]
